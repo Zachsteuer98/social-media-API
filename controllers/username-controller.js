@@ -13,11 +13,11 @@ const usernameController = {
     },
 
     //get a single user by their _id and populated thought and friend data
-    getUserById(req, res) {
-        Username.findOne({ _id: process_params.id })
+    getUserById({ params }, res) {
+        Username.findOne({ _id: params.id })
             .then(dbUsernameData => {
                 //if no user is found, send 404
-                if (!dbusernameData) {
+                if (!dbUsernameData) {
                     res.status(404).json({ message: 'No User found with this Id' })
                     return;
                 }
