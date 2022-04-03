@@ -4,7 +4,8 @@ const ThoughtSchema = new Schema({
     thoughtText: {
         type: String,
         requried: true,
-        match: [/^(.{280}[^\s]*).*/, 'Thought must be between 0 and 280 characters.']
+        validate: [/^(.{0,280}[^\s]*).*/, 'Thought must be between 0 and 280 characters.'],
+        match: [/^(.{0,280}[^\s]*).*/, 'Thought must be between 0 and 280 characters.']
     },
     createdAt: {
         type: Date,
