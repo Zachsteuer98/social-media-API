@@ -3,8 +3,10 @@ const {
     getAllThoughts,
     getThoughtById,
     addThought,
+    addReaction,
     updateThought,
-    removeThought
+    removeThought,
+    removeReaction
 } = require('../../controllers/thought-controller');
 
 // set up CRUD methods for thoughts at /api/thoughts
@@ -20,5 +22,12 @@ router
     .put(updateThought)
     .delete(removeThought);
 
+router
+    .route('/:thoughtId/reactions')
+    .post(addReaction)
+
+router
+    .route('/:thoughtId/reactions/:reactionId')
+    .delete(removeReaction)
 
 module.exports = router
