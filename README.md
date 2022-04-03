@@ -9,6 +9,7 @@
 5. [Features] 
 6. [Contributors]
 7. [License]
+8. [Github]
     
 
 ## Project Description
@@ -28,6 +29,9 @@ Express, Mongoose, MongoDB
 
 ## Contributors
 Zachsteuer98
+
+## Github
+https://github.com/Zachsteuer98/social-media-API.git
 
 ## license
 
