@@ -54,7 +54,7 @@ const usernameController = {
 
     //Update a user by their _id
     updateUser({ params, body }, res) {
-        Username.findOneAndUpdate({ params: params.id }, body, { new: true })
+        Username.findOneAndUpdate({ params: params.id }, body, { new: true, runValidators: true })
             .then(dbUsernameData => {
                 if (!dbUsernameData) {
                     res.status(404).json({ message: 'No user found with this Id' })

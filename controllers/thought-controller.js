@@ -72,7 +72,7 @@ const thoughtController = {
     //Update a thought
     updateThought({ params, body }, res) {
         const { thoughtId } = params;
-        Thought.findOneAndUpdate({ id_: thoughtId }, body, { new: true })
+        Thought.findOneAndUpdate({ id_: thoughtId }, body, { new: true, runValidators: true })
             .then(updatedThought => {
                 if (!updatedThought) {
                     return res.status(404).json({ message: 'No thought found with this Id' })
